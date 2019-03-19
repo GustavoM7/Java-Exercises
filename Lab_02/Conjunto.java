@@ -60,11 +60,10 @@ class Conjunto {
         for (int i = 0; i < c.ultimaposicao; ++i) {
             //Se elemento de c pertence ao this, pertence a interseção 
             if (pertence(c.conjunto[i])) {
-                intersecaoconj[p] = this.conjunto[i];
+                intersecaoconj[p] = c.conjunto[i];
                 ++p;
             }
         }
-
         return intersecaoconj;
     }
 
