@@ -77,7 +77,7 @@ class Teste {
     c.inserir(5);
     c.inserir(7);
     c.inserir(9);
-
+  
     Conjunto d = new Conjunto(); //primos
     d.inserir(2);
     d.inserir(3);
@@ -90,9 +90,9 @@ class Teste {
     d.inserir(23);
     d.inserir(29);
 
-    //item a ------- OK
+    //item a
 
-    System.out.println("item a -------------------------------");
+    System.out.println("item A: Testando se o conjunto 4 eh subconjunto se si mesmo");
     if(d.subconjunto(d)){
       System.out.println("eh subconjunto");
     }
@@ -100,8 +100,8 @@ class Teste {
       System.out.println("nao eh subconjunto");
     }
 
-    //item b ------- OK
-    System.out.println("item b -------------------------------");
+    //item b 
+    System.out.println("item B: Testando a pertinencia dos conjuntos 2, 3 e 4 no conjunto 1");
     if(a.subconjunto(b)){
       System.out.println("b eh subconjunto de a");
     }
@@ -124,18 +124,53 @@ class Teste {
     }
 
     //item c 
-    System.out.println("item c -------------------------------");
+    System.out.println("item C: Testando se a uniao de 2 e 3 eh igual ao conjunto 1");
     int vetoruniao[] = b.uniao(c);
-    System.out.println("essa eh a uniao dos conjuntos b e c");
-    for(int i = 0; i < vetoruniao.length; ++i){
-      System.out.println(vetoruniao[i]);
+    boolean igualdade = true;
+    if(a.getUltimaPosicao() == vetoruniao.length){
+      for(int i = 0; i < vetoruniao.length; ++i){
+        if(a.pertence(vetoruniao[i])){
+          continue;
+        }
+        else{
+          igualdade = false;
+          break;
+        }
+      }
+      if(igualdade){
+        System.out.println("a uniao dos conjuntos b e c eh igual ao conjunto a");
+      }
+      else{
+        System.out.println("a uniao dos conjuntos b e c nao eh igual ao conjunto a");
+      }
     }
-    //falta a igualdade com o conj 1
-
+    else{
+      System.out.println("a uniao dos conjuntos b e c nao eh igual ao conjunto a");
+    }
+    
     //item d
-    
+    System.out.println("item D: Testando se a intersecao dos conjuntos 1 e 2 eh vazia");
+    int interAeB[] = a.intersecao(b);
+    //Imprimindo interseção:
+    for(int i = 0; i < interAeB.length; i++){
+      System.out.println(interAeB[i]);
+    }
+
+    //Testando se é um vetor vazio (zeros repetidos, visto q não há repetição nos conjuntos);
+    if(interAeB[0] == 0 && interAeB[1] == 0){
+      System.out.println("intersecao esta vazia");
+    } else {
+      System.out.println("intersecao nao esta vazia");
+    }
+
+    //item e
+    System.out.println("item E: Qual diferenca entre os conjunto 1 e 2");
+    int vetordiferenca[] = a.diferenca(b);
+    System.out.println("essa eh a diferenca A - B dos conjuntos");
+    for(int i = 0; i < vetordiferenca.length; ++i){
+      System.out.println(vetordiferenca[i]);
+    }
     
 
-    
   }
 }

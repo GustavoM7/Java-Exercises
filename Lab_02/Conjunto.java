@@ -82,4 +82,11 @@ class Conjunto {
         return diferencaconj;
     }
 
+    int[] getConjunto(){
+        return this.conjunto;
+    }
+    int getUltimaPosicao(){
+        return this.ultimaposicao;
+    }
+
 }
