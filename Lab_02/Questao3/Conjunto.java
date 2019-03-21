@@ -28,7 +28,7 @@ class Conjunto {
 
     boolean pertence(String elem) { //verifica se o elem pertence ao conj
         for (int i = 0; i < this.ultimaposicao; ++i) {
-            if (this.conjunto[i] == elem) {
+            if (this.conjunto[i].equals(elem)) {
                 return true;
             }
         }

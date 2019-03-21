@@ -28,7 +28,7 @@ class Conjunto {
 
     boolean pertence(String elem) { //verifica se o elem pertence ao conj
         for (int i = 0; i < this.ultimaposicao; ++i) {
-            if (this.conjunto[i] == elem) {
+            if (this.conjunto[i].equals(elem)) {
                 return true;
             }
         }
@@ -51,7 +51,7 @@ class Conjunto {
         String uniaoconj[] = new String[this.ultimaposicao + c.ultimaposicao]; //Vetor com tamanho máximo do conjunto união
         int p = 0;
         for (int i = 0; i < c.ultimaposicao; ++i) { 
-            if(!pertence(c.conjunto[i])){ //Verificando se cada elemento do conjunto c já está no this para enviar repetição
+            if(!pertence(c.conjunto[i])){ //Verificando se cada elemento do conjunto c já está no this para evitar repetição
                 uniaoconj[p] = c.conjunto[i];
                 ++p;
             }
