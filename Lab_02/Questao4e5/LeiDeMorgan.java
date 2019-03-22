@@ -5,7 +5,7 @@ class LeiDeMorgan{
         Conjunto u = new Conjunto(50);
         //Inserindo 50 primeiros inteiros no conjunto universo:
         for(int i = 0; i < 50; i++){
-            u.inserir(Integer.toString(i));
+            u.inserir(i);
         }
 
         System.out.println("\n");
@@ -13,23 +13,23 @@ class LeiDeMorgan{
         Conjunto a = new Conjunto(10);
         //Inserindo 10 primeiros naturais no conjunto A:
         for(int i = 0; i < 10; i++){
-            a.inserir(Integer.toString(i));
+            a.inserir(i);
         }
 
         System.out.println("\n");
         System.out.println("*Conjunto B:");
         Conjunto b = new Conjunto(10);
         //Inserindo 5 primeiros pares no conjunto B:
-        b.inserir("2");
-        b.inserir("4");
-        b.inserir("6");
-        b.inserir("8");
-        b.inserir("10");
+        b.inserir(2);
+        b.inserir(4);
+        b.inserir(6);
+        b.inserir(8);
+        b.inserir(10);
 
         System.out.println("\n");
         System.out.println("*Conjunto união A e B:");
 
-        String uniaoAB[] = a.uniao(b);
+        Object uniaoAB[] = a.uniao(b);
 
         //Percorrendo vetor de strings a união a b e gerando novo conjunto
         Conjunto ab = new Conjunto(11);
@@ -42,7 +42,7 @@ class LeiDeMorgan{
         System.out.println("\n");
         System.out.println("*Conjunto complementar a união A e B:");
 
-        String complabLista[] = u.diferenca(ab); //Diferença entre a união e o conjunto universo
+        Object complabLista[] = u.diferenca(ab); //Diferença entre a união e o conjunto universo
 
         //Percorrendo vetor de strings do complementar de a b e inserir em novo conjunto
         Conjunto complab = new Conjunto(39);
@@ -58,7 +58,7 @@ class LeiDeMorgan{
         System.out.println("\n");
         System.out.println("*Conjunto complementar de A:");
 
-        String complaLista[] = u.diferenca(a); //Diferença entre conjunto A e o conjunto universo
+        Object complaLista[] = u.diferenca(a); //Diferença entre conjunto A e o conjunto universo
 
         //Percorrendo vetor de strings do complementar de A e inserir em novo conjunto
         Conjunto compla = new Conjunto(40);
@@ -71,7 +71,7 @@ class LeiDeMorgan{
         System.out.println("\n");
         System.out.println("*Conjunto complementar de B:");
 
-        String complbLista[] = u.diferenca(b); //Diferença entre conjunto B e o conjunto universo
+        Object complbLista[] = u.diferenca(b); //Diferença entre conjunto B e o conjunto universo
 
         //Percorrendo vetor de strings do complementar de A e inserir em novo conjunto
         Conjunto complb = new Conjunto(45);
@@ -84,7 +84,7 @@ class LeiDeMorgan{
         System.out.println("\n");
         System.out.println("*Interseção entre complementar de A e complementar de B:");
 
-        String interComplAComplB[] = compla.intersecao(complb); //Lista com elementos da interseção;
+        Object interComplAComplB[] = compla.intersecao(complb); //Lista com elementos da interseção;
         //Percorrendo lista:
 
         System.out.print("{");
@@ -109,7 +109,7 @@ class LeiDeMorgan{
         System.out.println("(Primeira equação provada)\n");
 
         System.out.println("*Interseção de A e B:");
-        String interABList[] = a.intersecao(b);
+        Object interABList[] = a.intersecao(b);
 
         //Percorrendo vetor de string e inserindo em novo conjunto:
         Conjunto interAB = new Conjunto(interABList.length);
@@ -121,7 +121,7 @@ class LeiDeMorgan{
         }
 
         System.out.println("\n*Complementar da interseção de A e B:");
-        String complInterAB[] = u.diferenca(interAB);
+        Object complInterAB[] = u.diferenca(interAB);
 
         //Percorrendo vetor
         System.out.print("{");
@@ -137,7 +137,7 @@ class LeiDeMorgan{
 
         System.out.println("\n*União do complemento de A e do complemento de B:");
 
-        String uniComplAComplB[] = compla.uniao(complb); //Lista com a união dos conjuntos criados acima
+        Object uniComplAComplB[] = compla.uniao(complb); //Lista com a união dos conjuntos criados acima
 
         //Percorrendo vetor
         System.out.print("{");

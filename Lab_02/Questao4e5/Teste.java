@@ -19,7 +19,7 @@ class Teste {
 
       System.out.print("\n");
       System.out.println("*Produto Cartesiano de A e B:");
-      String produto[][] = a.produtoCartesianto(b);
+      Object produto[][] = a.produtoCartesianto(b);
 
       System.out.print("{");
       //Percorrendo matriz do produto cartesiano:

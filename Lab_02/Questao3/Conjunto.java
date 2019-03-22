@@ -1,18 +1,18 @@
 class Conjunto {
-    String conjunto[]; //Alterando vetor de inteiros para strings, assim conjunto aceitará não somente elementos do tipo inteiro
+    Object conjunto[]; //Alterando vetor de inteiros para strings, assim conjunto aceitará não somente elementos do tipo inteiro
     int ultimaposicao = 0; //marca a ultima posição preenchida do conjunto
 
     //Método construtor
 
     Conjunto(int tamanho){
-        this.conjunto = new String[tamanho]; //Tamanho variável
+        this.conjunto = new Object[tamanho]; //Tamanho variável
     }
 
     Conjunto(){
-        this.conjunto = new String[100]; //Tamanho default
+        this.conjunto = new Object[100]; //Tamanho default
     }
 
-    void inserir(String elem) {
+    void inserir(Object elem) {
 
         if(this.ultimaposicao == 100){
             System.out.println("Conjunto cheio!");
@@ -26,7 +26,7 @@ class Conjunto {
 
     }
 
-    boolean pertence(String elem) { //verifica se o elem pertence ao conj
+    boolean pertence(Object elem) { //verifica se o elem pertence ao conj
         for (int i = 0; i < this.ultimaposicao; ++i) {
             if (this.conjunto[i].equals(elem)) {
                 return true;
@@ -47,8 +47,8 @@ class Conjunto {
         return true;
     }
 
-    String[] uniao(Conjunto c){
-        String uniaoconj[] = new String[this.ultimaposicao + c.ultimaposicao]; //Vetor com tamanho máximo do conjunto união
+    Object[] uniao(Conjunto c){
+        Object uniaoconj[] = new Object[this.ultimaposicao + c.ultimaposicao]; //Vetor com tamanho máximo do conjunto união
         int p = 0;
         for (int i = 0; i < c.ultimaposicao; ++i) { 
             if(!pertence(c.conjunto[i])){ //Verificando se cada elemento do conjunto c já está no this para enviar repetição
@@ -63,8 +63,8 @@ class Conjunto {
         return uniaoconj;
     }
 
-    String[] intersecao(Conjunto c){
-        String intersecaoconj[] = new String[c.ultimaposicao]; //Vetor com tamanho máximo do conjunto de interseção (supondo c o menor conjunto)
+    Object[] intersecao(Conjunto c){
+        Object intersecaoconj[] = new Object[c.ultimaposicao]; //Vetor com tamanho máximo do conjunto de interseção (supondo c o menor conjunto)
         int p = 0;
 
         for (int i = 0; i < c.ultimaposicao; ++i) {
@@ -77,9 +77,9 @@ class Conjunto {
         return intersecaoconj;
     }
 
-    String[] diferenca(Conjunto c){ // A - B
+    Object[] diferenca(Conjunto c){ // A - B
     
-        String diferencaconj[] = new String[this.ultimaposicao]; //Vetor com o tamanho máximo do conjunto diferença
+        Object diferencaconj[] = new Object[this.ultimaposicao]; //Vetor com o tamanho máximo do conjunto diferença
         int p = 0;
         //Percorrendo todos os elementos de this
         for (int i = 0; i < this.ultimaposicao; ++i){
@@ -92,7 +92,7 @@ class Conjunto {
         return diferencaconj;
     }
 
-    String[] getConjunto(){
+    Object[] getConjunto(){
         return this.conjunto;
     }
     int getUltimaPosicao(){

@@ -75,7 +75,7 @@ class Teste {
 
     //item c 
     System.out.println("item C: Testando se a uniao de 2 e 3 eh igual ao conjunto 1");
-    String vetoruniao[] = b.uniao(c);
+    Object vetoruniao[] = b.uniao(c);
     boolean igualdade = true;
     if(a.getUltimaPosicao() == vetoruniao.length){
       for(int i = 0; i < vetoruniao.length; ++i){
@@ -100,7 +100,7 @@ class Teste {
     
     //item d
     System.out.println("item D: Testando se a intersecao dos conjuntos 1 e 2 eh vazia");
-    String interAeB[] = a.intersecao(b);
+    Object interAeB[] = a.intersecao(b);
     //Imprimindo interseção:
     for(int i = 0; i < interAeB.length; i++){
       System.out.println(interAeB[i]);
@@ -115,7 +115,7 @@ class Teste {
 
     //item e
     System.out.println("item E: Qual diferenca entre os conjunto 1 e 2");
-    String vetordiferenca[] = a.diferenca(b);
+    Object vetordiferenca[] = a.diferenca(b);
     System.out.println("essa eh a diferenca A - B dos conjuntos");
     for(int i = 0; i < vetordiferenca.length; ++i){
         if(vetordiferenca[i] != null){
