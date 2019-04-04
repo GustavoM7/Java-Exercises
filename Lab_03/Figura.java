@@ -1,21 +1,34 @@
 public abstract class Figura {
-    float centroX;
+    float centroX = 0;
     float centroY;
-    Object tipo;
+    String tipo;
 
-    Figura(float x, float y, Object t){
+    Figura(float x, float y, String t){
         this.centroX = x;
         this.centroY = y;
         this.tipo = t;
     }
 
     String desenhar(){
-        return this.tipo.toString();
+        return toString();
+    }
+
+    @Override
+    public String toString(){
+        return this.tipo;
     }
 
     void mover(float dy, float dx){
         this.centroX = this.centroX + dx;
-        this.centroY = this.centroX + dy;
+        this.centroY = this.centroY + dy;
+    }
+
+    float getX(){
+        return this.centroX;
+    }
+
+    float getY(){
+        return this.centroY;
     }
 
     abstract float calcularArea();

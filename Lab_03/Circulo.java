@@ -1,7 +1,7 @@
 class Circulo extends Figura{
     float raio;
 
-    Circulo(float x, float y, Object tipo, float raio){
+    Circulo(float x, float y, String tipo, float raio){
         super(x, y, tipo);
         this.raio = raio;
     }
