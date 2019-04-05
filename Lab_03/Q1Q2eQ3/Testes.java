@@ -1,4 +1,4 @@
-public class Main {
+public class Testes {
     public static void main(String[] args) {
         System.out.println("## Questão 3 ##");
         System.out.println("-- Istanciando quadrado de lado 4 --");
